@@ -1,2 +1,30 @@
-# AETHERCHATBOT
-Aether is a small AI chat app I built for me and a few friends, no sign-ups, no tracking, just a clean space to talk to a fast AI. Powered by Groq's LLMs, so replies stream in almost instantly. Pick a model depending on whether you want quick answers or deeper thinking. Chats stay in your browser, nothing's stored.
+# Aether · Groq Chat
+
+A cinematic streaming chat UI on top of Groq. Animated aurora background, conversation memory, and live token streaming.
+
+## Setup
+
+```bash
+cd groq-chat
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+copy .env.example .env
+```
+
+Put your real key in `.env`:
+
+```
+GROQ_API_KEY=gsk_...
+GROQ_MODEL=openai/gpt-oss-120b
+```
+
+## Run
+
+```bash
+uvicorn app:app --reload --port 8000
+```
+
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+Enter sends. Shift+Enter makes a new line. Chats are stored in the browser.
